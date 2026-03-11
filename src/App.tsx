@@ -12,15 +12,12 @@ import {
   Star,
   Clock,
   BookOpen,
-  ListChecks,
   Target,
-  Heart,
   Zap,
   ShieldCheck,
 } from "lucide-react";
-import { useState } from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import { useEffect } from "react";
+import { useState, useEffect, type MouseEvent } from "react";
 
 import logo from "./assets/logo.png";
 import mockup from "./assets/mockup.png";
@@ -33,7 +30,15 @@ import t1 from "./assets/testimonial1.jpg";
 import t2 from "./assets/testimonial2.jpg";
 import t3 from "./assets/testimonial3.jpg";
 
+declare global {
+  interface Window {
+    fbq?: (...args: any[]) => void;
+  }
+}
+
 // --- Components ---
+
+const HOTMART_URL = "https://pay.hotmart.com/T104626871Q";
 
 const Button = ({
   children,
@@ -61,7 +66,11 @@ const Section = ({ children, className = "", id = "" }: any) => (
   </section>
 );
 
-const Hero = () => (
+const Hero = ({
+  handleBuyClick,
+}: {
+  handleBuyClick: (e: MouseEvent<HTMLAnchorElement>, url: string) => void;
+}) => (
   <section className="bg-brand-blue text-white pt-8 pb-24 px-6 md:px-12 overflow-hidden relative">
     <div className="max-w-6xl mx-auto">
       <nav className="flex justify-between items-center">
@@ -82,7 +91,8 @@ const Hero = () => (
         >
           <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6 tracking-tight">
             <span className="text-brand-orange">
-              El sistema simple para organizar tu alimentación después de los 35
+              Organiza tu alimentación y tu semana sin dietas complicadas
+              después de los 35
             </span>
           </h1>
 
@@ -104,9 +114,10 @@ const Hero = () => (
 
           <div className="flex justify-center md:justify-start">
             <a
-              href="https://pay.hotmart.com/T104626871Q"
-              target="_self"
+              href={HOTMART_URL}
+              target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => handleBuyClick(e, HOTMART_URL)}
             >
               <Button
                 primary
@@ -508,7 +519,7 @@ const WhatYouGet = () => (
           </div>
           <div>
             <h3 className="text-xl md:text-2xl font-bold mb-3">{card.title}</h3>
-            <p className="text-lg md:text-xl leading-relaxedtext-gray-600">
+            <p className="text-lg md:text-xl leading-relaxed text-gray-600">
               {card.text}
             </p>
           </div>
@@ -555,7 +566,8 @@ const Bonuses = () => (
           <h3 className="text-2xl font-bold text-brand-blue mb-3">
             {bono.title}
           </h3>
-          <p className="text-xl md:text-xl leading-relaxedtext-gray-600 mb-6 text-sm leading-relaxed">
+
+          <p className="text-sm md:text-base text-gray-600 mb-6 leading-relaxed">
             {bono.desc}
           </p>
           <div className="flex justify-between items-center pt-4 border-t border-gray-100">
@@ -585,7 +597,11 @@ const Bonuses = () => (
   </Section>
 );
 
-const Pricing = () => (
+const Pricing = ({
+  handleBuyClick,
+}: {
+  handleBuyClick: (e: MouseEvent<HTMLAnchorElement>, url: string) => void;
+}) => (
   <Section className="bg-white text-center">
     <div className="max-w-6xl mx-auto">
       {/* VALOR REAL (alineado y legible) */}
@@ -658,9 +674,10 @@ const Pricing = () => (
         </div>
 
         <a
-          href="https://pay.hotmart.com/T104626871Q"
-          target="_self"
+          href={HOTMART_URL}
+          target="_blank"
           rel="noopener noreferrer"
+          onClick={(e) => handleBuyClick(e, HOTMART_URL)}
         >
           <Button
             primary
@@ -695,7 +712,11 @@ const EmotionalFinal = () => (
   </Section>
 );
 
-const Closing = () => (
+const Closing = ({
+  handleBuyClick,
+}: {
+  handleBuyClick: (e: MouseEvent<HTMLAnchorElement>, url: string) => void;
+}) => (
   <Section className="pt-24 md:pt-28 pb-10 md:pb-12 bg-white text-center">
     <h2 className="text-3xl md:text-5xl font-extrabold text-brand-blue mb-8">
       EL MOMENTO ES AHORA
@@ -713,9 +734,10 @@ const Closing = () => (
       </p>
     </div>
     <a
-      href="https://pay.hotmart.com/T104626871Q"
-      target="_self"
+      href={HOTMART_URL}
+      target="_blank"
       rel="noopener noreferrer"
+      onClick={(e) => handleBuyClick(e, HOTMART_URL)}
     >
       <Button primary className="text-xl md:text-2xl px-16 py-6 mb-16">
         OBTENER AHORA →
@@ -806,9 +828,22 @@ const Footer = () => (
 );
 
 export default function App() {
+  useEffect(() => {
+    window.fbq?.("track", "ViewContent");
+  }, []);
+
+  const handleBuyClick = (e: MouseEvent<HTMLAnchorElement>, url: string) => {
+    e.preventDefault();
+    window.fbq?.("track", "InitiateCheckout");
+
+    setTimeout(() => {
+      window.open(url, "_blank", "noopener,noreferrer");
+    }, 150);
+  };
+
   return (
     <div className="min-h-screen selection:bg-brand-orange selection:text-white">
-      <Hero />
+      <Hero handleBuyClick={handleBuyClick} />
       <Identification />
       <UniqueSystem />
       <InsidePreview />
@@ -817,9 +852,9 @@ export default function App() {
       <Comparison />
       <WhatYouGet />
       <Bonuses />
-      <Pricing />
+      <Pricing handleBuyClick={handleBuyClick} />
       <EmotionalFinal />
-      <Closing />
+      <Closing handleBuyClick={handleBuyClick} />
       <FAQ />
       <Footer />
     </div>
