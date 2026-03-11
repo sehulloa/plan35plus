@@ -20,6 +20,8 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import ReactPixel from "react-facebook-pixel";
+import { useEffect } from "react";
 
 import logo from "./assets/logo.png";
 import mockup from "./assets/mockup.png";
@@ -805,6 +807,11 @@ const Footer = () => (
 );
 
 export default function App() {
+  useEffect(() => {
+    ReactPixel.init("861138036964366");
+    ReactPixel.pageView();
+  }, []);
+
   return (
     <div className="min-h-screen selection:bg-brand-orange selection:text-white">
       <Hero />
