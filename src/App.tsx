@@ -20,7 +20,6 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import ReactPixel from "react-facebook-pixel";
 import { useEffect } from "react";
 
 import logo from "./assets/logo.png";
