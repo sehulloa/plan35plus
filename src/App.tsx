@@ -63,7 +63,7 @@ const Section = ({ children, className = "", id = "" }: any) => (
 const Hero = () => (
   <section className="bg-brand-blue text-white pt-8 pb-24 px-6 md:px-12 overflow-hidden relative">
     <div className="max-w-6xl mx-auto">
-      <nav className="flex justify-between items-center mb-5">
+      <nav className="flex justify-between items-center">
         <img
           src={logo}
           alt="Plan35+ Logo"
@@ -79,7 +79,7 @@ const Hero = () => (
           transition={{ duration: 0.8 }}
           className="md:w-1/2 text-left"
         >
-          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
+          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6 tracking-tight">
             <span className="text-brand-orange">
               El sistema simple para organizar tu alimentación después de los 35
             </span>
@@ -120,7 +120,7 @@ const Hero = () => (
             Acceso inmediato • Descarga digital • Pago único de $9.99
           </p>
 
-          <p className="text-xl md:text-2xl leading-relaxed font-light opacity-90 mt-4 max-w-2xl text-center">
+          <p className="text-xl md:text-xl leading-relaxed font-light opacity-90 mt-10 max-w-2xl text-center">
             Si llegas cansado y terminas decidiendo qué comer en el momento,
             esto es para ti.
           </p>
