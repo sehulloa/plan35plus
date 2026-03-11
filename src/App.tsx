@@ -806,11 +806,6 @@ const Footer = () => (
 );
 
 export default function App() {
-  useEffect(() => {
-    ReactPixel.init("861138036964366");
-    ReactPixel.pageView();
-  }, []);
-
   return (
     <div className="min-h-screen selection:bg-brand-orange selection:text-white">
       <Hero />
