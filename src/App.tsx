@@ -79,25 +79,29 @@ const Hero = () => (
           transition={{ duration: 0.8 }}
           className="md:w-1/2 text-left"
         >
-          <h1 className="text-3xl md:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
             <span className="text-brand-orange">
               El sistema simple para organizar tu alimentación después de los 35
             </span>
           </h1>
 
-          <p className="text-base md:text-xl leading-relaxed font-light opacity-90 mb-6 max-w-xl">
+          <p className="text-lg md:text-xl leading-relaxed font-light opacity-90 mb-6 max-w-xl">
             Menús semanales, lista de compras inteligente y una guía práctica
             para organizar tu alimentación sin complicarte.
           </p>
 
-          <div className="space-y-1 md:hidden mb-7">
+          <div className="space-y-2 mb-6 text-lg md:text-xl">
             <div className="flex items-center gap-3">
-              <CheckCircle2 className="w-5 h-5 text-brand-orange shrink-0" />
-              <span>Menús simples para la semana</span>
+              <CheckCircle2 className="w-6 h-6 text-brand-orange shrink-0" />
+              <span>Menús simples para toda la semana</span>
             </div>
             <div className="flex items-center gap-3">
-              <CheckCircle2 className="w-5 h-5 text-brand-orange shrink-0" />
+              <CheckCircle2 className="w-6 h-6 text-brand-orange shrink-0" />
               <span>Lista de compras inteligente</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <CheckCircle2 className="w-6 h-6 text-brand-orange shrink-0" />
+              <span>Sistema claro para decidir menos</span>
             </div>
           </div>
 
@@ -120,7 +124,7 @@ const Hero = () => (
             Acceso inmediato • Descarga digital • Pago único de $9.99
           </p>
 
-          <p className="text-base md:text-xl leading-relaxed font-light opacity-90 mt-5 mb-6 max-w-xl text-center">
+          <p className="text-xl md:text-2xl leading-relaxed font-light opacity-90 mt-4 max-w-2xl text-center">
             Si llegas cansado y terminas decidiendo qué comer en el momento,
             esto es para ti.
           </p>
