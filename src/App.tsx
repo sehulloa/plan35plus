@@ -90,7 +90,7 @@ const Hero = () => (
             para organizar tu alimentación sin complicarte.
           </p>
 
-          <div className="space-y-2 mb-6 text-lg md:text-xl">
+          <div className="space-y-2 mb-6 text-base md:text-xl">
             <div className="flex items-center gap-3">
               <CheckCircle2 className="w-6 h-6 text-brand-orange shrink-0" />
               <span>Menús simples para toda la semana</span>
@@ -98,10 +98,6 @@ const Hero = () => (
             <div className="flex items-center gap-3">
               <CheckCircle2 className="w-6 h-6 text-brand-orange shrink-0" />
               <span>Lista de compras inteligente</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <CheckCircle2 className="w-6 h-6 text-brand-orange shrink-0" />
-              <span>Sistema claro para decidir menos</span>
             </div>
           </div>
 
