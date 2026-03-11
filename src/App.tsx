@@ -142,7 +142,7 @@ const Hero = () => (
             <img
               src={mockup}
               alt="Plan35+ Mockup"
-              className="w-[140%] md:w-[180%] max-w-none h-auto drop-shadow-2xl rotate-6 md:-mr-40 lg:-mr-60 relative z-10"
+              className="w-[100%] md:w-[180%] max-w-none h-auto drop-shadow-2xl md:rotate-6 md:-mr-40 lg:-mr-60 relative z-10"
               referrerPolicy="no-referrer"
             />
             <div className="absolute bottom-0 right-0 md:-right-12 bg-brand-orange text-white p-6 md:p-8 rounded-full font-bold text-center shadow-2xl z-20 transform translate-y-1/4">
@@ -267,49 +267,49 @@ const InsidePreview = () => (
     </div>
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-      <div className="bg-gray-50 rounded-3xl p-6 shadow-sm">
-        <img
-          src={pg1}
-          alt="Ejemplo del menú semanal"
-          className="w-full rounded-2xl shadow-lg"
-        />
-        <p className="text-center mt-4 text-xl font-semibold text-brand-blue">
-          Menú semanal claro y organizado para reducir decisiones diarias
-        </p>
-      </div>
+      {[
+        {
+          src: pg1,
+          alt: "Ejemplo del menú semanal",
+          label: "Menú semanal claro y organizado",
+        },
+        {
+          src: pg2,
+          alt: "Ejemplo de receta",
+          label: "Recetas para cada tiempo de comida",
+        },
+        {
+          src: pg3,
+          alt: "Guía de ejercicio diaria",
+          label: "Guía de ejercicio diaria simple y realista",
+        },
+        {
+          src: pg4,
+          alt: "Lista de compras",
+          label: "Lista de compras organizada",
+        },
+      ].map((item, i) => (
+        <motion.div
+          key={i}
+          whileHover={{ y: -6 }}
+          className="bg-white rounded-[2rem] p-2 md:p-3 border border-gray-100 shadow-[0_20px_60px_rgba(0,0,0,0.08)] transition-all"
+        >
+          <div className="bg-brand-beige/40 rounded-[1.5rem] p-3 md:p-4">
+            <img
+              src={item.src}
+              alt={item.alt}
+              className="w-full rounded-xl shadow-lg border border-white"
+              referrerPolicy="no-referrer"
+            />
+          </div>
 
-      <div className="bg-gray-50 rounded-3xl p-6 shadow-sm">
-        <img
-          src={pg2}
-          alt="Ejemplo lista de compras"
-          className="w-full rounded-2xl shadow-lg"
-        />
-        <p className="text-center mt-4 text-xl font-semibold text-brand-blue">
-          Recetas para cada tiempo de comida
-        </p>
-      </div>
-
-      <div className="bg-gray-50 rounded-3xl p-6 shadow-sm">
-        <img
-          src={pg3}
-          alt="Sistema de seguimiento"
-          className="w-full rounded-2xl shadow-lg"
-        />
-        <p className="text-center mt-4 text-xl font-semibold text-brand-blue">
-          Guía de ejercicio diaria simple y realista
-        </p>
-      </div>
-
-      <div className="bg-gray-50 rounded-3xl p-6 shadow-sm">
-        <img
-          src={pg4}
-          alt="Guía práctica"
-          className="w-full rounded-2xl shadow-lg"
-        />
-        <p className="text-center mt-4 text-xl font-semibold text-brand-blue">
-          Lista de compras organizada
-        </p>
-      </div>
+          <div className="mt-5 text-center">
+            <p className="text-lg md:text-xl font-bold text-brand-blue">
+              {item.label}
+            </p>
+          </div>
+        </motion.div>
+      ))}
     </div>
   </Section>
 );
@@ -398,7 +398,10 @@ const Testimonials = () => (
           text: "Me gustó ver que es un sistema simple y aterrizado. Ya lo empecé a revisar y cumple con lo que esperaba.",
         },
       ].map((t, i) => (
-        <div key={i} className="bg-white p-8 rounded-3xl shadow-sm relative">
+        <div
+          key={i}
+          className="bg-white p-8 rounded-3xl border border-gray-100 shadow-[0_20px_50px_rgba(0,0,0,0.08)] relative"
+        >
           <p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
             "{t.text}"
           </p>
@@ -646,18 +649,19 @@ const Pricing = () => (
           PRECIO HOY: $9.99
         </h2>
 
-        <p className="text-xl md:text-3xl text-gray-700 mb-10">
+        <p className="text-xl md:text-3xl text-gray-700 mb-5">
           Pago único • Acceso inmediato • Sin suscripciones
         </p>
 
-        <div className="mb-10">
+        <div className="mb-10 flex justify-center">
           <img
             src={portada}
             alt="Mockup Plan35+"
-            className="max-w-lg md:max-w-xl mx-auto drop-shadow-2xl"
+            className="w-70 md:w-auto max-w-lg md:max-w-xl drop-shadow-2xl"
             referrerPolicy="no-referrer"
           />
         </div>
+
         <a
           href="https://pay.hotmart.com/T104626871Q"
           target="_self"
