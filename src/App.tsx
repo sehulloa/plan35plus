@@ -99,7 +99,7 @@ const Hero = ({
             seguir.
           </p>
 
-          <div className="mt-3 space-y-1 text-sm md:text-lg max-w-xl mx-0">
+          <div className="mt-3 space-y-2 text-left pl-4 md:pl-0 text-base md:text-lg">
             <div className="flex items-center gap-2 justify-center md:justify-start">
               <CheckCircle2 className="w-4 h-4 text-brand-orange shrink-0" />
               <span>Plan de alimentación sencillo</span>
