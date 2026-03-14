@@ -99,23 +99,23 @@ const Hero = ({
             seguir.
           </p>
 
-          <div className="mt-3 space-y-2 text-left pl-4 md:pl-0 text-base md:text-lg">
-            <div className="flex items-center gap-2 justify-center md:justify-start">
+          <div className="space-y-2 mt-3 mb-6 text-base md:text-lg">
+            <div className="flex items-center gap-2 justify-start">
               <CheckCircle2 className="w-4 h-4 text-brand-orange shrink-0" />
               <span>Plan de alimentación sencillo</span>
             </div>
 
-            <div className="flex items-center gap-2 justify-center md:justify-start">
+            <div className="flex items-center gap-2 justify-start">
               <CheckCircle2 className="w-4 h-4 text-brand-orange shrink-0" />
               <span>Recetas fáciles</span>
             </div>
 
-            <div className="flex items-center gap-2 justify-center md:justify-start">
+            <div className="flex items-center gap-2 justify-start">
               <CheckCircle2 className="w-4 h-4 text-brand-orange shrink-0" />
               <span>Ejercicios fáciles de seguir</span>
             </div>
 
-            <div className="flex items-center gap-2 justify-center md:justify-start">
+            <div className="flex items-center gap-2 justify-start">
               <CheckCircle2 className="w-4 h-4 text-brand-orange shrink-0" />
               <span>Crear hábitos saludables</span>
             </div>
