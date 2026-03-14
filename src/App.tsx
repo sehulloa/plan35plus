@@ -6,9 +6,7 @@ import {
   RefreshCw,
   ShoppingCart,
   CheckCircle2,
-  XCircle,
   ChevronDown,
-  ChevronUp,
   Star,
   Clock,
   BookOpen,
@@ -71,13 +69,13 @@ const Hero = ({
 }: {
   handleBuyClick: (e: MouseEvent<HTMLAnchorElement>, url: string) => void;
 }) => (
-  <section className="bg-brand-blue text-white pt-8 pb-24 px-6 md:px-12 overflow-hidden relative">
+  <section className="bg-brand-blue text-white pt-4 pb-8 px-5 md:px-12 overflow-hidden relative">
     <div className="max-w-6xl mx-auto">
       <nav className="flex justify-between items-center">
         <img
           src={logo}
           alt="Plan35+ Logo"
-          className="h-28 md:h-42 object-contain"
+          className="h-20 md:h-28 object-contain"
           referrerPolicy="no-referrer"
         />
       </nav>
@@ -89,30 +87,47 @@ const Hero = ({
           transition={{ duration: 0.8 }}
           className="md:w-1/2 text-left"
         >
-          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6 tracking-tight">
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight">
             <span className="text-brand-orange">
-              Organiza tu alimentación y tu semana sin dietas complicadas
-              después de los 35
+              Guía simple para ordenar tu alimentación y retomar el ejercicio
+              después de los 35 años
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl leading-relaxed font-light opacity-90 mb-6 max-w-xl">
-            Menús semanales, lista de compras inteligente y una guía práctica
-            para organizar tu alimentación sin complicarte.
+          <p className="text-sm md:text-lg leading-snug md:leading-relaxed opacity-95 mt-2 max-w-xl mx-auto md:mx-0">
+            Una guía clara para volver a cuidarte con un plan simple y fácil de
+            seguir.
           </p>
 
-          <div className="space-y-2 mb-6 text-base md:text-xl">
-            <div className="flex items-center gap-3">
-              <CheckCircle2 className="w-6 h-6 text-brand-orange shrink-0" />
-              <span>Menús simples para toda la semana</span>
+          <div className="mt-3 space-y-1 text-sm md:text-lg max-w-xl mx-auto md:mx-0">
+            <div className="flex items-center gap-2 justify-center md:justify-start">
+              <CheckCircle2 className="w-4 h-4 text-brand-orange shrink-0" />
+              <span>Plan de alimentación sencillo</span>
             </div>
-            <div className="flex items-center gap-3">
-              <CheckCircle2 className="w-6 h-6 text-brand-orange shrink-0" />
-              <span>Lista de compras inteligente</span>
+
+            <div className="flex items-center gap-2 justify-center md:justify-start">
+              <CheckCircle2 className="w-4 h-4 text-brand-orange shrink-0" />
+              <span>Recetas fáciles</span>
+            </div>
+
+            <div className="flex items-center gap-2 justify-center md:justify-start">
+              <CheckCircle2 className="w-4 h-4 text-brand-orange shrink-0" />
+              <span>Ejercicios fáciles de seguir</span>
+            </div>
+
+            <div className="flex items-center gap-2 justify-center md:justify-start">
+              <CheckCircle2 className="w-4 h-4 text-brand-orange shrink-0" />
+              <span>Crear hábitos saludables</span>
             </div>
           </div>
 
-          <div className="flex justify-center md:justify-start">
+          <div className="mt-3">
+            <p className="text-brand-orange font-extrabold text-xl md:text-2xl text-center">
+              PRECIO HOY: $6.99 USD
+            </p>
+          </div>
+
+          <div className="mt-4 flex justify-center">
             <a
               href={HOTMART_URL}
               target="_blank"
@@ -121,78 +136,83 @@ const Hero = ({
             >
               <Button
                 primary
-                className="text-lg md:text-2xl uppercase tracking-wider px-10 md:px-16 py-4 md:py-6"
+                className="text-sm md:text-xl uppercase tracking-wide px-10 md:px-16 py-2 md:py-4"
               >
-                OBTENER PLAN35+ AHORA
+                OBTENER EL PLAN35+
               </Button>
             </a>
           </div>
 
-          <p className="text-base md:text-lg leading-relaxed font-light opacity-90 mt-3 max-w-2xl text-center">
-            Acceso inmediato • Descarga digital • Pago único de $9.99
-          </p>
-
-          <p className="text-xl md:text-xl leading-relaxed font-light opacity-90 mt-10 max-w-2xl text-center">
-            Si llegas cansado y terminas decidiendo qué comer en el momento,
-            esto es para ti.
+          <p className="text-xs md:text-base opacity-90 mt-2 text-center">
+            Pago único • Acceso inmediato
+            <br />
+            Descarga digital • Pago seguro con Hotmart
           </p>
         </motion.div>
 
+        {/* IMAGEN */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.7, delay: 0.15 }}
           className="md:w-1/2 relative flex items-center justify-center"
         >
-          <div className="relative w-full">
+          <div className="relative w-full max-w-[200px] md:max-w-lg">
             <img
               src={mockup}
               alt="Plan35+ Mockup"
               className="w-[100%] md:w-[180%] max-w-none h-auto drop-shadow-2xl md:rotate-6 md:-mr-40 lg:-mr-60 relative z-10"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute bottom-0 right-0 md:-right-12 bg-brand-orange text-white p-6 md:p-8 rounded-full font-bold text-center shadow-2xl z-20 transform translate-y-1/4">
-              <span className="block text-sm uppercase tracking-tighter">
-                Pago único
-              </span>
-              <span className="text-3xl md:text-5xl">$9.99</span>
+
+            <div className="absolute -bottom-2 -right-2 bg-brand-orange text-white px-4 py-3 rounded-xl font-bold text-center shadow-xl">
+              <span className="block text-[10px] uppercase">Hoy</span>
+              <span className="text-xl md:text-3xl">$7</span>
             </div>
           </div>
         </motion.div>
       </div>
     </div>
-
-    <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32 blur-3xl"></div>
-    <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-orange/10 rounded-full -ml-48 -mb-48 blur-3xl"></div>
   </section>
 );
 
 const Identification = () => (
   <Section className="bg-white text-center">
-    <h2 className="text-3xl md:text-4xl font-bold mb-8 text-brand-blue">
-      "¿Sientes que la improvisación está tomando el control de tu alimentación
-      y tu movimiento?"
+    <h2 className="text-3xl md:text-4xl font-bold mb-6 text-brand-blue leading-snug">
+      ¿Sientes que la improvisación está tomando el control de tu alimentación y
+      tu ejercicio?
     </h2>
-    <p className="text-xl md:text-2xl leading-relaxed mb-12 max-w-4xl mx-auto">
-      No es falta de voluntad. Es exceso de decisiones diarias. PLAN35+ te ayuda
-      a ordenar lo esencial para que la constancia sea posible, incluso en
-      semanas ocupadas.
-    </p>
+
+    <div className="max-w-4xl mx-auto text-lg md:text-xl leading-relaxed text-brand-blue/90 space-y-2 mb-12">
+      <p>No es falta de voluntad.</p>
+      <p>Es exceso de decisiones cada día.</p>
+      <p>
+        PLAN35+ te ayuda a ordenar lo esencial para que la constancia sea
+        posible, incluso en semanas ocupadas.
+      </p>
+    </div>
 
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="bg-brand-beige p-8 md:p-12 rounded-3xl border-2 border-brand-blue/10"
+      className="bg-brand-beige p-8 md:p-10 rounded-3xl border border-brand-blue/10 shadow-sm max-w-5xl mx-auto"
     >
-      <h3 className="text-2xl md:text-3xl font-extrabold text-brand-orange mb-6 uppercase tracking-widest">
-        "Después de los 35, la estrategia cambia."
+      {/* Línea decorativa superior */}
+      <div className="w-20 h-1 bg-brand-orange mx-auto mb-6 rounded"></div>
+
+      <h3 className="text-xl md:text-2xl font-extrabold text-brand-orange mb-4 uppercase tracking-wide">
+        Después de los 35, la estrategia cambia
       </h3>
-      <p className="text-lg md:text-2xl leading-relaxed italic text-brand-text max-w-3xl mx-auto">
-        La energía ya no se recupera igual, el estrés impacta más y los errores
-        se sienten acumulativos. Por eso este sistema no busca intensidad: busca
-        organización sostenible para reducir decisiones y sostener hábitos sin
-        reiniciar cada semana.
+
+      <p className="text-base md:text-lg leading-relaxed italic text-brand-text max-w-3xl mx-auto">
+        La energía no se recupera igual. El estrés impacta más y los errores se
+        acumulan.
+      </p>
+
+      <p className="text-base md:text-lg leading-relaxed italic text-brand-text max-w-3xl mx-auto mt-3">
+        Por eso este sistema no busca intensidad. Busca organización simple para
+        mantener hábitos sin empezar de nuevo cada semana.
       </p>
     </motion.div>
   </Section>
@@ -203,16 +223,15 @@ const UniqueSystem = () => (
     <div className="flex flex-col md:flex-row items-center gap-12">
       <div className="md:w-1/2">
         <h2 className="text-3xl md:text-5xl font-bold text-brand-blue mb-8 leading-tight">
-          El{" "}
+          Un{" "}
           <span className="text-brand-orange underline decoration-brand-blue/20">
             sistema
           </span>{" "}
-          que combina alimentación organizada + movimiento simple, diseñado para
-          adultos +35
+          simple para comer mejor y retomar el ejercicio después de los 35
         </h2>
         <div className="text-lg md:text-xl space-y-4">
           {[
-            "Estructura clara para semanas reales",
+            "Plan claro para semanas reales",
             "Menos improvisación, menos desgaste mental",
             "Constancia sin perfección ni reinicios",
             "Ajustes prácticos sin culpa",
@@ -250,8 +269,8 @@ const UniqueSystem = () => (
                 />
               ))}
             </div>
-            <p className="font-bold text-brand-blue">Estructura Real</p>
-            <p className="text-sm opacity-70">Para vidas reales</p>
+            <p className="font-bold text-brand-blue">Fácil de seguir</p>
+            <p className="text-sm opacity-70">Para la vida real</p>
           </div>
         </div>
       </div>
@@ -259,16 +278,20 @@ const UniqueSystem = () => (
   </Section>
 );
 
-const InsidePreview = () => (
-  <Section className="bg-white">
-    <div className="text-center mb-12">
-      <h2 className="text-3xl md:text-5xl font-bold text-brand-blue mb-4">
-        Mira cómo es el Plan 35+ por dentro
+const InsidePreview = ({
+  handleBuyClick,
+}: {
+  handleBuyClick: (e: MouseEvent<HTMLAnchorElement>, url: string) => void;
+}) => (
+  <Section className="bg-[#eef2f6]">
+    <div className="text-center max-w-3xl mx-auto mb-16">
+      <div className="w-46 h-1 bg-brand-orange mx-auto mb-6 rounded"></div>
+      <h2 className="text-3xl md:text-5xl font-bold text-brand-blue mb-6">
+        Así es el Plan35+ por dentro
       </h2>
 
       <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-        Estas son páginas reales del material para que veas cómo está organizado
-        el sistema.
+        Páginas reales del material para que veas cómo está organizado.
       </p>
     </div>
 
@@ -277,30 +300,30 @@ const InsidePreview = () => (
         {
           src: pg1,
           alt: "Ejemplo del menú semanal",
-          label: "Menú semanal claro y organizado",
+          label: "Menú semanal claro y fácil de seguir",
         },
         {
           src: pg2,
           alt: "Ejemplo de receta",
-          label: "Recetas para cada tiempo de comida",
+          label: "Recetas simples para cada comida",
         },
         {
           src: pg3,
           alt: "Guía de ejercicio diaria",
-          label: "Guía de ejercicio diaria simple y realista",
+          label: "Rutina diaria de ejercicios",
         },
         {
           src: pg4,
           alt: "Lista de compras",
-          label: "Lista de compras organizada",
+          label: "Lista de compras inteligente",
         },
       ].map((item, i) => (
         <motion.div
           key={i}
           whileHover={{ y: -6 }}
-          className="bg-white rounded-[2rem] p-2 md:p-3 border border-gray-100 shadow-[0_20px_60px_rgba(0,0,0,0.08)] transition-all"
+          className="bg-white rounded-[2rem] p-2 md:p-3 shadow-lg transition-all"
         >
-          <div className="bg-brand-beige/40 rounded-[1.5rem] p-3 md:p-4">
+          <div className="bg-brand-beige/30 rounded-2xl p-3">
             <img
               src={item.src}
               alt={item.alt}
@@ -309,13 +332,30 @@ const InsidePreview = () => (
             />
           </div>
 
-          <div className="mt-5 text-center">
-            <p className="text-lg md:text-xl font-bold text-brand-blue">
-              {item.label}
-            </p>
-          </div>
+          <p className="mt-4 text-lg md:text-xl font-semibold text-brand-blue text-center">
+            {item.label}
+          </p>
         </motion.div>
       ))}
+    </div>
+    <div className="mt-12 bg-white rounded-2xl shadow-lg border border-gray-100 px-8 py-8 text-center max-w-2xl mx-auto">
+      <p className="text-xl md:text-2xl text-brand-blue font-medium leading-relaxed mb-6">
+        Un sistema simple para organizar tu semana
+        <span className="block text-orange-500 font-semibold mt-2">
+          sin improvisar qué comer ni cuándo entrenar.
+        </span>
+      </p>
+
+      <a
+        href={HOTMART_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={(e) => handleBuyClick(e, HOTMART_URL)}
+      >
+        <Button primary className="text-lg md:text-xl px-10 py-5">
+          OBTENER EL PLAN35+
+        </Button>
+      </a>
     </div>
   </Section>
 );
@@ -323,56 +363,85 @@ const InsidePreview = () => (
 const HowItWorks = () => {
   const items = [
     {
-      icon: <Apple className="w-12 h-12 text-brand-orange" />,
+      icon: <Apple className="w-8 h-8 text-brand-orange" />,
       title: "Organizar tus comidas sin complicarte",
-      text: "Un marco simple para decidir menos y sostener lo esencial cada semana.",
+      text: "Un plan simple para decidir menos y mantener lo esencial cada semana.",
     },
     {
-      icon: <Brain className="w-10 h-10 text-brand-orange" />,
-      title: "Reducir decisiones diarias",
-      text: "Menos fricción mental: comes mejor sin depender de motivación.",
+      icon: <Brain className="w-8 h-8 text-brand-orange" />,
+      title: "Reducir el desgaste mental",
+      text: "Menos decisiones diarias para que comer mejor sea más fácil de sostener.",
+      featured: true,
     },
     {
-      icon: <Activity className="w-10 h-10 text-brand-orange" />,
-      title: "Moverte sin castigarte",
-      text: "Movimiento realista que se adapta a tu energía y tiempo.",
+      icon: <Activity className="w-8 h-8 text-brand-orange" />,
+      title: "Retomar el ejercicio sin exigirte de más",
+      text: "Ejercicios simples que se adaptan a tu energía y a tu tiempo.",
     },
     {
-      icon: <RefreshCw className="w-10 h-10 text-brand-orange" />,
-      title: "Evitar reinicios por errores",
-      text: "Si un día no sale, continúas en la siguiente comida y sigues.",
+      icon: <RefreshCw className="w-8 h-8 text-brand-orange" />,
+      title: "Evitar reiniciar cada semana",
+      text: "Si un día no sale como esperabas, continúas y sigues adelante.",
     },
     {
-      icon: <ShoppingCart className="w-10 h-10 text-brand-orange" />,
-      title: "Simplificar tus compras",
-      text: "Comprar lo planificado reduce impulsos y facilita cumplir.",
+      icon: <ShoppingCart className="w-8 h-8 text-brand-orange" />,
+      title: "Comprar con más claridad",
+      text: "Tener una lista y una idea clara de la semana reduce impulsos y facilita cumplir.",
     },
     {
-      icon: <CheckCircle2 className="w-10 h-10 text-brand-orange" />,
-      title: "Sostener 4 semanas seguidas",
-      text: "Repetir lo básico construye resultados reales a largo plazo.",
+      icon: <CheckCircle2 className="w-8 h-8 text-brand-orange" />,
+      title: "Mantener constancia real",
+      text: "Repetir lo básico con orden te ayuda a sostener resultados con el tiempo.",
     },
   ];
 
   return (
-    <Section className="bg-white">
-      <h2 className="text-3xl md:text-4xl font-bold text-center text-brand-blue mb-16">
-        Con el Sistema de Alimentación Integral vas a:
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <Section className="bg-[#f5f7fa]">
+      <div className="text-center mb-14">
+        <div className="w-24 h-1 bg-brand-orange mx-auto mb-6 rounded"></div>
+
+        <h2 className="text-4xl md:text-5xl font-bold text-brand-blue">
+          Lo que vas a lograr con Plan35+
+        </h2>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {items.map((item, i) => (
           <motion.div
             key={i}
-            whileHover={{ y: -10 }}
-            className="p-8 rounded-3xl border border-gray-100 bg-white shadow-sm hover:shadow-xl transition-all duration-300"
+            whileHover={{ y: -8 }}
+            className={`relative overflow-hidden rounded-3xl border transition-all duration-300 ${
+              item.featured
+                ? "bg-white border-brand-orange/20 shadow-[0_20px_45px_rgba(0,0,0,0.12)]"
+                : "bg-white border-brand-blue/10 shadow-[0_12px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_18px_40px_rgba(0,0,0,0.1)]"
+            }`}
           >
-            <div className="text-4xl mb-6">{item.icon}</div>
-            <h3 className="text-xl md:text-2xl font-bold text-brand-blue mb-4 leading-snug">
-              {item.title}
-            </h3>
-            <p className="text-lg md:text-xl leading-relaxed text-gray-600">
-              {item.text}
-            </p>
+            {/* Franja superior */}
+            <div
+              className={`h-1.5 w-full ${
+                item.featured ? "bg-brand-orange" : "bg-brand-blue/10"
+              }`}
+            ></div>
+
+            <div className="p-7">
+              <div
+                className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-5 ${
+                  item.featured
+                    ? "bg-brand-orange/10 shadow-sm"
+                    : "bg-brand-beige shadow-sm"
+                }`}
+              >
+                {item.icon}
+              </div>
+
+              <h3 className="text-xl md:text-2xl font-bold text-brand-blue mb-3 leading-snug">
+                {item.title}
+              </h3>
+
+              <p className="text-base md:text-lg leading-relaxed text-gray-600">
+                {item.text}
+              </p>
+            </div>
           </motion.div>
         ))}
       </div>
@@ -380,101 +449,76 @@ const HowItWorks = () => {
   );
 };
 
-const Testimonials = () => (
-  <Section className="bg-gray-50">
-    <h2 className="text-3xl md:text-4xl font-bold text-center text-brand-blue mb-16">
-      Lo que comentan quienes ya comenzaron con el plan
-    </h2>
+const BeforeAfter = () => (
+  <Section className="bg-white flex items-center min-h-[75vh]">
+    <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+      {/* ANTES */}
+      <div className="bg-red-50 border border-red-200 rounded-3xl p-10 md:p-12">
+        <h3 className="text-4xl font-bold text-red-700 mb-10">Antes</h3>
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {[
-        {
-          name: "María López",
-          photo: t1,
-          text: "El material está muy claro y bien organizado. Me gustó que no promete perfección, sino una forma realista de ordenar la semana.",
-        },
-        {
-          name: "Carlos Martínez",
-          photo: t2,
-          text: "La compra fue sencilla y el acceso inmediato. El enfoque es práctico y se nota que está pensado para personas con poco tiempo.",
-        },
-        {
-          name: "Ana Ramírez",
-          photo: t3,
-          text: "Me gustó ver que es un sistema simple y aterrizado. Ya lo empecé a revisar y cumple con lo que esperaba.",
-        },
-      ].map((t, i) => (
-        <div
-          key={i}
-          className="bg-white p-8 rounded-3xl border border-gray-100 shadow-[0_20px_50px_rgba(0,0,0,0.08)] relative"
-        >
-          <p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
-            "{t.text}"
-          </p>
-
-          <div className="flex items-center gap-4">
-            <img
-              src={t.photo}
-              alt={t.name}
-              className="w-16 h-16 rounded-full object-cover"
-            />
-
-            <span className="text-base md:text-xl font-bold text-brand-blue">
-              {t.name}
+        <ul className="space-y-7 text-xl text-red-900/80">
+          <li className="flex gap-4 items-start">
+            <span className="flex items-center justify-center w-7 h-7 rounded-full bg-red-200 text-red-700 font-bold">
+              ×
             </span>
-          </div>
-        </div>
-      ))}
-    </div>
-  </Section>
-);
+            Improvisas qué comer cada día
+          </li>
 
-const Comparison = () => (
-  <Section className="bg-white">
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-      <div className="bg-red-50 p-10 rounded-3xl border-2 border-red-100">
-        <h3 className="text-2xl md:text-3xl font-bold text-red-700 mb-8 flex items-center gap-3">
-          <XCircle className="w-8 h-8" /> NO es para ti si:
-        </h3>
-        <ul className="space-y-4">
-          {[
-            "Buscas cambios rápidos sin organizarte",
-            "Quieres entrenamientos intensos diarios",
-            "Quieres una dieta estricta que alguien más controle",
-            "Disfrutas de retos agresivos",
-            "Prefieres improvisación sobre estructura",
-          ].map((item, i) => (
-            <li
-              key={i}
-              className="flex items-start gap-4 text-xl md:text-2xl text-red-900/80 leading-relaxed"
-            >
-              <span className="text-red-500 mt-1 text-2xl">•</span>
-              <span>{item}</span>
-            </li>
-          ))}
+          <li className="flex gap-4 items-start">
+            <span className="flex items-center justify-center w-7 h-7 rounded-full bg-red-200 text-red-700 font-bold">
+              ×
+            </span>
+            Te cansas de decidir todo el tiempo
+          </li>
+
+          <li className="flex gap-4 items-start">
+            <span className="flex items-center justify-center w-7 h-7 rounded-full bg-red-200 text-red-700 font-bold">
+              ×
+            </span>
+            Dejas el ejercicio y luego intentas empezar de nuevo
+          </li>
+
+          <li className="flex gap-4 items-start mb-10">
+            <span className="flex items-center justify-center w-7 h-7 rounded-full bg-red-200 text-red-700 font-bold">
+              ×
+            </span>
+            Sientes que una semana mala arruina todo
+          </li>
         </ul>
       </div>
 
-      <div className="bg-green-50 p-10 rounded-3xl border-2 border-green-100">
-        <h3 className="text-2xl md:text-3xl font-bold text-green-700 mb-8 flex items-center gap-3">
-          <CheckCircle2 className="w-8 h-8" /> SI es para ti si:
-        </h3>
-        <ul className="space-y-4">
-          {[
-            "Tienes 35 años o más",
-            "Buscas organización clara y sostenible",
-            "Quieres reducir decisiones diarias",
-            "Ya probaste planes intensos sin éxito",
-            "Prefieres equilibrio sobre perfección",
-          ].map((item, i) => (
-            <li
-              key={i}
-              className="flex items-start gap-4 text-xl md:text-2xl text-green-900/80 leading-relaxed"
-            >
-              <span className="text-green-500 mt-1 text-2xl">✓</span>
-              <span>{item}</span>
-            </li>
-          ))}
+      {/* CON PLAN */}
+      <div className="bg-green-50 border border-green-200 rounded-3xl p-10 md:p-12">
+        <h3 className="text-4xl font-bold text-green-700 mb-10">Con Plan35+</h3>
+
+        <ul className="space-y-7 text-xl text-green-900/80">
+          <li className="flex gap-4 items-start">
+            <span className="flex items-center justify-center w-7 h-7 rounded-full bg-green-200 text-green-700 font-bold">
+              ✓
+            </span>
+            Tienes una guía clara para tu semana
+          </li>
+
+          <li className="flex gap-4 items-start">
+            <span className="flex items-center justify-center w-7 h-7 rounded-full bg-green-200 text-green-700 font-bold">
+              ✓
+            </span>
+            Reduces decisiones y desgaste mental
+          </li>
+
+          <li className="flex gap-4 items-start">
+            <span className="flex items-center justify-center w-7 h-7 rounded-full bg-green-200 text-green-700 font-bold">
+              ✓
+            </span>
+            Retomas el ejercicio con algo fácil de seguir
+          </li>
+
+          <li className="flex gap-4 items-start">
+            <span className="flex items-center justify-center w-7 h-7 rounded-full bg-green-200 text-green-700 font-bold mb-10">
+              ✓
+            </span>
+            Mantienes constancia sin reiniciar todo
+          </li>
         </ul>
       </div>
     </div>
@@ -484,35 +528,35 @@ const Comparison = () => (
 const WhatYouGet = () => (
   <Section className="bg-brand-blue text-white">
     <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">
-      🔥 TODO LO QUE RECIBES HOY
+      🔥 Esto es lo que incluye Plan35+
     </h2>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
       {[
         {
           icon: <BookOpen className="w-10 h-10 text-brand-orange" />,
           title: "Guía principal PLAN35+",
-          text: "Guía base de alimentación y movimiento para adultos +35. Enfoque claro, realista y sostenible.",
+          text: "Guía principal para organizar tu alimentación y retomar el ejercicio después de los 35.",
         },
         {
           icon: <Target className="w-10 h-10 text-brand-orange" />,
           title: "Sistema de seguimiento semanal",
-          text: "Estructura para mantener claridad semanal y medir progreso sin perfección. Evita la sensación de ‘perdí la semana’.",
+          text: "Te ayuda a revisar tu semana, medir tu avance y seguir adelante sin sentir que perdiste el proceso.",
         },
         {
           icon: <ShoppingCart className="w-10 h-10 text-brand-orange" />,
           title: "Lista de compras inteligente",
-          text: "Reduce improvisación en el supermercado. Compra lo necesario sin excesos, adaptable a tu presupuesto.",
+          text: "Te ayuda a comprar con más claridad, evitar excesos y ajustarte mejor a tu presupuesto.",
         },
         {
           icon: <Clock className="w-10 h-10 text-brand-orange" />,
           title: "Mini guía de organización (20 min)",
-          text: "Método para organizar tu semana completa en 20 minutos. Menos decisiones, más constancia.",
+          text: "Una forma simple de organizar tu semana en 20 minutos para reducir decisiones y mantener constancia.",
         },
       ].map((card, i) => (
         <motion.div
           key={i}
           whileHover={{ scale: 1.02 }}
-          className="bg-white text-brand-blue p-8 rounded-3xl flex flex-col md:flex-row gap-6 items-start shadow-xl"
+          className={`bg-white text-brand-blue rounded-3xl flex flex-col md:flex-row gap-6 items-start shadow-xl ${i === 0 ? "p-10 border-t-8 border-brand-orange" : "p-8"}`}
         >
           <div className="bg-brand-beige p-4 rounded-2xl shrink-0">
             {card.icon}
@@ -533,12 +577,11 @@ const Bonuses = () => (
   <Section className="bg-brand-beige">
     <div className="text-center mb-16">
       <h2 className="text-3xl md:text-5xl font-bold text-brand-blue mb-4">
-        🎁 MATERIALES INCLUIDOS
+        🎁 Todo lo que recibes con tu compra
       </h2>
-      <p className="text-2xl text-brand-orange font-bold">
-        (Incluidos con tu compra)
+      <p className="text-3xl text-brand-orange font-bold">
+        Acceso inmediato al sistema completo por $6.99 USD
       </p>
-      <p className="text-3xl text-brand-orange font-bold">(Solo por $9.99)</p>
     </div>
 
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -589,7 +632,7 @@ const Bonuses = () => (
             Por un único pago de
           </p>
           <p className="text-3xl md:text-4xl font-extrabold text-brand-orange mt-1">
-            $9.99 USD
+            $6.99 USD
           </p>
         </div>
       </div>
@@ -606,38 +649,52 @@ const Pricing = ({
     <div className="max-w-6xl mx-auto">
       {/* VALOR REAL (alineado y legible) */}
       <div className="mb-16">
-        <h3 className="text-2xl md:text-3xl font-bold text-gray-400 uppercase tracking-widest mb-10">
-          El valor real de lo que recibes
-        </h3>
+        <div className="max-w-4xl mx-auto bg-white rounded-[2.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.10)] border border-brand-blue/10 overflow-hidden">
+          <div className="h-2 w-full bg-brand-orange"></div>
 
-        <div className="max-w-3xl mx-auto">
-          <div className="grid grid-cols-[1fr_auto] gap-x-10 gap-y-5 text-lg md:text-2xl text-gray-700">
-            <span className="text-left">Guía principal PLAN35+</span>
-            <span className="text-right font-semibold">$29.99</span>
+          <div className="p-8 md:p-12">
+            <h3 className="text-2xl md:text-4xl font-extrabold text-brand-blue uppercase tracking-wide mb-10 text-center">
+              Si compraras todo por separado
+            </h3>
 
-            <span className="text-left">
-              Complemento 1: Sistema de seguimiento semanal
-            </span>
-            <span className="text-right font-semibold">$9.99</span>
+            <div className="grid grid-cols-[1fr_auto] gap-x-8 gap-y-5 text-lg md:text-2xl items-center">
+              <span className="text-left text-brand-blue">
+                Guía principal PLAN35+
+              </span>
+              <span className="text-right font-bold line-through text-gray-400">
+                $29.99
+              </span>
 
-            <span className="text-left">
-              Complemento 2: Lista de compras inteligente
-            </span>
-            <span className="text-right font-semibold">$9.99</span>
+              <span className="text-left text-brand-blue">
+                Sistema de seguimiento semanal
+              </span>
+              <span className="text-right font-bold line-through text-gray-400">
+                $9.99
+              </span>
 
-            <span className="text-left">
-              Complemento 3: Mini guía de organización (20 min)
-            </span>
-            <span className="text-right font-semibold">$9.99</span>
-          </div>
+              <span className="text-left text-brand-blue">
+                Lista de compras inteligente
+              </span>
+              <span className="text-right font-bold line-through text-gray-400">
+                $9.99
+              </span>
 
-          <div className="mt-8 pt-6 border-t border-gray-200 grid grid-cols-[1fr_auto] gap-x-10 items-center">
-            <span className="text-left font-extrabold text-xl md:text-2xl text-brand-blue uppercase tracking-wide">
-              Valor total
-            </span>
-            <span className="text-right font-extrabold text-2xl md:text-3xl text-brand-blue">
-              $59.96
-            </span>
+              <span className="text-left text-brand-blue">
+                Mini guía de organización (20 min)
+              </span>
+              <span className="text-right font-bold line-through text-gray-400">
+                $9.99
+              </span>
+            </div>
+
+            <div className="mt-8 pt-8 border-t border-gray-200 text-center">
+              <p className="text-lg md:text-xl font-bold text-brand-blue uppercase tracking-wide">
+                Valor total del sistema
+              </p>
+              <p className="text-5xl md:text-6xl font-extrabold text-brand-orange mt-3">
+                $59.96
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -647,24 +704,17 @@ const Pricing = ({
         initial={{ scale: 0.95, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
         viewport={{ once: true }}
-        className="bg-brand-beige p-14 md:p-16 rounded-[3rem] border-4 border-green-600 shadow-2xl"
+        className="bg-brand-beige p-14 md:p-10 rounded-[3rem] border-4 border-green-600 shadow-2xl"
       >
-        <div
-          className="hidden md:block absolute top-6 right-6 bg-green-600 text-white px-12 py-5 text-2xl font-extrabold 
-        uppercase tracking-wider rounded-full shadow-2xl"
-        >
-          Precio de lanzamiento
-        </div>
-
-        <h2 className="text-4xl md:text-6xl font-extrabold text-brand-blue mb-4">
-          PRECIO HOY: $9.99
+        <h2 className="text-3xl md:text-6xl font-extrabold text-brand-blue mb-4">
+          Acceso completo hoy por $6.99 USD
         </h2>
 
         <p className="text-xl md:text-3xl text-gray-700 mb-5">
-          Pago único • Acceso inmediato • Sin suscripciones
+          Pago único • Acceso inmediato • Sin suscripción
         </p>
 
-        <div className="mb-10 flex justify-center">
+        <div className="mb-5 flex justify-center">
           <img
             src={portada}
             alt="Mockup Plan35+"
@@ -681,13 +731,13 @@ const Pricing = ({
         >
           <Button
             primary
-            className="w-full md:w-auto text-xl md:text-2xl px-14 py-6 mb-6"
+            className="w-full md:w-auto text-xl md:text-2xl px-16 py-6 mb-3"
           >
-            OBTENER PLAN35+ AHORA
+            OBTENER EL PLAN35+
           </Button>
         </a>
 
-        <div className="mt-6 flex items-center justify-center gap-4 text-xl md:text-3xl text-brand-blue font-medium">
+        <div className="mt-3 flex items-center justify-center gap-4 text-xl md:text-3xl text-brand-blue font-medium">
           <ShieldCheck className="w-7 h-7 md:w-8 md:h-8 text-green-600" />
           Garantía de 7 días • Compra segura
         </div>
@@ -696,116 +746,80 @@ const Pricing = ({
   </Section>
 );
 
-const EmotionalFinal = () => (
-  <Section className="bg-brand-blue text-white text-center py-20 md:py-24">
-    <h2 className="text-4xl md:text-6xl font-extrabold mb-12 tracking-tight">
-      Imagínate dentro de 30 días...
-    </h2>
-    <div className="max-w-3xl mx-auto space-y-8 text-xl md:text-2xl font-light leading-relaxed">
-      <p>Tu semana ya no depende de improvisar.</p>
-      <p>Decides menos, te desgastas menos, y sostienes lo básico.</p>
-      <p>Si un día no sale perfecto, no reinicias: continúas.</p>
-      <p className="text-brand-orange font-bold text-3xl md:text-4xl pt-8">
-        No se trata de perfección. Se trata de constancia posible.
-      </p>
-    </div>
-  </Section>
-);
-
-const Closing = ({
-  handleBuyClick,
-}: {
-  handleBuyClick: (e: MouseEvent<HTMLAnchorElement>, url: string) => void;
-}) => (
-  <Section className="pt-24 md:pt-28 pb-10 md:pb-12 bg-white text-center">
-    <h2 className="text-3xl md:text-5xl font-extrabold text-brand-blue mb-8">
-      EL MOMENTO ES AHORA
-    </h2>
-    <div className="max-w-2xl mx-auto mb-12 space-y-4">
-      <p className="text-xl">
-        Si quieres una guía clara para ordenar tu alimentación y movimiento
-        después de los 35, este es tu siguiente paso.
-      </p>
-      <h3 className="text-3xl font-bold text-brand-orange uppercase tracking-widest pt-4">
-        "EMPIEZA HOY CON ESTRUCTURA"
-      </h3>
-      <p className="text-4xl md:text-5xl font-extrabold text-brand-blue">
-        $9.99 USD
-      </p>
-    </div>
-    <a
-      href={HOTMART_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      onClick={(e) => handleBuyClick(e, HOTMART_URL)}
-    >
-      <Button primary className="text-xl md:text-2xl px-16 py-6 mb-16">
-        OBTENER AHORA →
-      </Button>
-    </a>
-
-    <div className="pt-12 border-t border-gray-100 italic text-gray-600">
-      <p className="text-xl md:text-2xl mb-2">"Con equilibrio y estructura,"</p>
-      <p className="font-bold text-brand-blue text-2xl">
-        Tu Mentor de Alimentación
-      </p>
-    </div>
-  </Section>
-);
-
 const FAQ = () => {
   const [open, setOpen] = useState<number | null>(null);
-
   const faqs = [
     {
-      q: "¿Cuánto tiempo debo invertir?",
-      a: "Con 20 minutos a la semana es suficiente para tener claridad diaria sobre qué comer. No se trata de cocinar más ni de pasar horas planificando, sino de decidir con anticipación para no improvisar durante la semana.",
+      question: "¿Cuánto tiempo debo invertir?",
+      answer:
+        "El plan está pensado para personas con poco tiempo. La organización semanal toma unos 20 minutos y los ejercicios diarios entre 20 y 30 minutos. El objetivo es que puedas sostenerlo sin que interfiera con tu rutina.",
     },
     {
-      q: "¿Cuándo veré resultados?",
-      a: "Muchas personas notan más claridad y organización desde la primera semana. Los resultados sostenibles llegan al repetir lo básico durante varias semanas.",
+      question: "¿Cuándo veré resultados?",
+      answer:
+        "Muchas personas sienten más claridad y control en su alimentación desde la primera semana. Los cambios físicos dependen de cada persona, pero el sistema está diseñado para construir hábitos sostenibles en el tiempo.",
     },
     {
-      q: "¿Esto reemplaza asesoría médica o nutricional?",
-      a: "No. PLAN35+ es una guía educativa y práctica. Si tienes una condición médica, lo ideal es consultarlo con un profesional.",
+      question: "¿Esto reemplaza asesoría médica o nutricional?",
+      answer:
+        "No. Este material es una guía general de organización de alimentación y movimiento. Si tienes una condición médica específica, lo ideal es consultar con un profesional de salud.",
     },
     {
-      q: "¿Qué pasa si no me funciona?",
-      a: "El sistema está diseñado para semanas reales. Incluye formas de ajustar sin abandonar y continuar incluso cuando un día no sale como esperabas.",
+      question: "¿Qué pasa si no me funciona?",
+      answer:
+        "Tu compra está protegida con una garantía de 7 días. Si el material no cumple con lo que esperabas, puedes solicitar el reembolso dentro de ese periodo.",
     },
     {
-      q: "¿En cuánto tiempo recibo el material?",
-      a: "Acceso inmediato después de la compra. Todo es digital y disponible al instante.",
+      question: "¿En cuánto tiempo recibo el material?",
+      answer:
+        "El acceso es inmediato. Después de completar el pago recibirás el enlace de descarga del material directamente en tu correo.",
     },
   ];
 
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggle = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
-    <Section className="bg-gray-50">
-      <h2 className="text-3xl font-bold text-center text-brand-blue mb-12">
-        PREGUNTAS FRECUENTES
-      </h2>
-      <div className="max-w-3xl mx-auto space-y-4">
-        {faqs.map((faq, i) => (
-          <div
-            key={i}
-            className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100"
-          >
-            <button
-              onClick={() => setOpen(open === i ? null : i)}
-              className="text-xl md:text-2xl font-bold w-full p-6 text-left flex justify-between items-center text-brand-blue hover:bg-gray-50 transition-colors"
+    <section className="py-20 bg-brand-beige">
+      <div className="max-w-3xl mx-auto px-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-brand-blue text-center mb-12">
+          PREGUNTAS FRECUENTES
+        </h2>
+
+        <div className="space-y-4">
+          {faqs.map((faq, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-xl shadow-md border border-gray-100"
             >
-              <span>{faq.q}</span>
-              {open === i ? <ChevronUp /> : <ChevronDown />}
-            </button>
-            {open === i && (
-              <div className="text-lg md:text-xl leading-relaxed p-6 pt-0 text-gray-600">
-                {faq.a}
-              </div>
-            )}
-          </div>
-        ))}
+              <button
+                onClick={() => toggle(index)}
+                className="w-full flex justify-between items-center p-6 text-left"
+              >
+                <span className="font-semibold text-brand-blue text-lg">
+                  {faq.question}
+                </span>
+
+                <ChevronDown
+                  className={`transition-transform duration-300 ${
+                    openIndex === index ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {openIndex === index && (
+                <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+                  {faq.answer}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
-    </Section>
+    </section>
   );
 };
 
@@ -846,15 +860,12 @@ export default function App() {
       <Hero handleBuyClick={handleBuyClick} />
       <Identification />
       <UniqueSystem />
-      <InsidePreview />
+      <InsidePreview handleBuyClick={handleBuyClick} />
       <HowItWorks />
-      <Testimonials />
-      <Comparison />
+      <BeforeAfter />
       <WhatYouGet />
       <Bonuses />
       <Pricing handleBuyClick={handleBuyClick} />
-      <EmotionalFinal />
-      <Closing handleBuyClick={handleBuyClick} />
       <FAQ />
       <Footer />
     </div>
