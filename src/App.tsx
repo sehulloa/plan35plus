@@ -99,7 +99,7 @@ const Hero = ({
             seguir.
           </p>
 
-          <div className="mt-3 space-y-1 text-sm md:text-lg max-w-xl mx-auto md:mx-0">
+          <div className="mt-3 space-y-1 text-sm md:text-lg max-w-xl mx-0">
             <div className="flex items-center gap-2 justify-center md:justify-start">
               <CheckCircle2 className="w-4 h-4 text-brand-orange shrink-0" />
               <span>Plan de alimentación sencillo</span>
@@ -177,8 +177,8 @@ const Hero = ({
 );
 
 const Identification = () => (
-  <Section className="bg-white text-center">
-    <h2 className="text-3xl md:text-4xl font-bold mb-6 text-brand-blue leading-snug">
+  <Section className="bg-[#eef2f6] text-center">
+    <h2 className="text-2xl md:text-4xl font-bold mb-6 text-brand-blue leading-snug">
       ¿Sientes que la improvisación está tomando el control de tu alimentación y
       tu ejercicio?
     </h2>
@@ -219,7 +219,7 @@ const Identification = () => (
 );
 
 const UniqueSystem = () => (
-  <Section className="bg-brand-beige">
+  <Section className="bg-white">
     <div className="flex flex-col md:flex-row items-center gap-12">
       <div className="md:w-1/2">
         <h2 className="text-3xl md:text-5xl font-bold text-brand-blue mb-8 leading-tight">
@@ -286,7 +286,7 @@ const InsidePreview = ({
   <Section className="bg-[#eef2f6]">
     <div className="text-center max-w-3xl mx-auto mb-16">
       <div className="w-46 h-1 bg-brand-orange mx-auto mb-6 rounded"></div>
-      <h2 className="text-3xl md:text-5xl font-bold text-brand-blue mb-6">
+      <h2 className="text-2xl md:text-5xl font-bold text-brand-blue mb-6">
         Así es el Plan35+ por dentro
       </h2>
 
@@ -352,7 +352,10 @@ const InsidePreview = ({
         rel="noopener noreferrer"
         onClick={(e) => handleBuyClick(e, HOTMART_URL)}
       >
-        <Button primary className="text-lg md:text-xl px-10 py-5">
+        <Button
+          primary
+          className="text-sm md:text-xl uppercase tracking-wide px-10 md:px-16 py-2 md:py-4"
+        >
           OBTENER EL PLAN35+
         </Button>
       </a>
@@ -396,11 +399,11 @@ const HowItWorks = () => {
   ];
 
   return (
-    <Section className="bg-[#f5f7fa]">
+    <Section className="bg-white">
       <div className="text-center mb-14">
         <div className="w-24 h-1 bg-brand-orange mx-auto mb-6 rounded"></div>
 
-        <h2 className="text-4xl md:text-5xl font-bold text-brand-blue">
+        <h2 className="text-2xl md:text-5xl font-bold text-brand-blue">
           Lo que vas a lograr con Plan35+
         </h2>
       </div>
@@ -450,13 +453,13 @@ const HowItWorks = () => {
 };
 
 const BeforeAfter = () => (
-  <Section className="bg-white flex items-center min-h-[75vh]">
+  <Section className="bg-[#eef2f6] flex items-center min-h-[75vh]">
     <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
       {/* ANTES */}
       <div className="bg-red-50 border border-red-200 rounded-3xl p-10 md:p-12">
         <h3 className="text-4xl font-bold text-red-700 mb-10">Antes</h3>
 
-        <ul className="space-y-7 text-xl text-red-900/80">
+        <ul className="space-y-7 text-lg text-red-900/80">
           <li className="flex gap-4 items-start">
             <span className="flex items-center justify-center w-7 h-7 rounded-full bg-red-200 text-red-700 font-bold">
               ×
@@ -491,7 +494,7 @@ const BeforeAfter = () => (
       <div className="bg-green-50 border border-green-200 rounded-3xl p-10 md:p-12">
         <h3 className="text-4xl font-bold text-green-700 mb-10">Con Plan35+</h3>
 
-        <ul className="space-y-7 text-xl text-green-900/80">
+        <ul className="space-y-7 text-lg text-green-900/80">
           <li className="flex gap-4 items-start">
             <span className="flex items-center justify-center w-7 h-7 rounded-full bg-green-200 text-green-700 font-bold">
               ✓
@@ -574,7 +577,7 @@ const WhatYouGet = () => (
 );
 
 const Bonuses = () => (
-  <Section className="bg-brand-beige">
+  <Section className="bg-white">
     <div className="text-center mb-16">
       <h2 className="text-3xl md:text-5xl font-bold text-brand-blue mb-4">
         🎁 Todo lo que recibes con tu compra
@@ -645,7 +648,7 @@ const Pricing = ({
 }: {
   handleBuyClick: (e: MouseEvent<HTMLAnchorElement>, url: string) => void;
 }) => (
-  <Section className="bg-white text-center">
+  <Section className="bg-[#eef2f6] text-center">
     <div className="max-w-6xl mx-auto">
       {/* VALOR REAL (alineado y legible) */}
       <div className="mb-16">
@@ -718,7 +721,7 @@ const Pricing = ({
           <img
             src={portada}
             alt="Mockup Plan35+"
-            className="w-70 md:w-auto max-w-lg md:max-w-xl drop-shadow-2xl"
+            className="w-70 md:w-auto max-w-lg md:max-w-xl drop-shadow-2xl mb-5"
             referrerPolicy="no-referrer"
           />
         </div>
@@ -731,14 +734,15 @@ const Pricing = ({
         >
           <Button
             primary
-            className="w-full md:w-auto text-xl md:text-2xl px-16 py-6 mb-3"
+            className="text-sm md:text-xl uppercase tracking-wide px-10 md:px-16 py-2 md:py-4"
           >
             OBTENER EL PLAN35+
           </Button>
         </a>
 
-        <div className="mt-3 flex items-center justify-center gap-4 text-xl md:text-3xl text-brand-blue font-medium">
-          <ShieldCheck className="w-7 h-7 md:w-8 md:h-8 text-green-600" />
+        <div className="mt-4 flex items-center justify-center gap-3 text-lg md:text-xl text-brand-blue font-medium">
+          {" "}
+          <ShieldCheck className="w-8 h-8 md:w-10 md:h-10 text-green-600 shrink-0" />
           Garantía de 7 días • Compra segura
         </div>
       </motion.div>
@@ -783,7 +787,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="py-20 bg-brand-beige">
+    <section className="py-20 bg-white">
       <div className="max-w-3xl mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-brand-blue text-center mb-12">
           PREGUNTAS FRECUENTES
