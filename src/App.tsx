@@ -694,7 +694,7 @@ const Pricing = ({
               <p className="text-lg md:text-xl font-bold text-brand-blue uppercase tracking-wide">
                 Valor total del sistema
               </p>
-              <p className="text-5xl md:text-6xl font-extrabold text-brand-orange mt-3">
+              <p className="text-4xl md:text-5xl font-extrabold text-brand-orange mt-3">
                 $59.96
               </p>
             </div>
