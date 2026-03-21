@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import {
   Apple,
   Brain,
@@ -43,20 +43,51 @@ const Button = ({
   className = "",
   primary = false,
   ...props
-}: any) => (
-  <motion.button
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-    className={`px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg cursor-pointer ${
-      primary
-        ? "bg-green-600 text-white hover:bg-green-700"
-        : "bg-white text-brand-blue hover:bg-gray-100 border border-gray-200"
-    } ${className}`}
-    {...props}
-  >
-    {children}
-  </motion.button>
-);
+}: any) => {
+  return (
+    <div className="inline-block p-6">
+      <motion.button
+        animate={
+          primary
+            ? {
+                scale: [1, 1.05, 1],
+                boxShadow: [
+                  "0 0 0px rgba(34,197,94,0)",
+                  "0 0 30px 8px rgba(34,197,94,0.6)",
+                  "0 0 0px rgba(34,197,94,0)",
+                ],
+              }
+            : {}
+        }
+        transition={{
+          duration: 0.9,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className={`relative overflow-hidden px-10 py-5 rounded-full font-bold text-xl cursor-pointer transition-all ${
+          primary
+            ? "bg-green-600 text-white border-2 border-green-400 z-10"
+            : "bg-white text-gray-800 border border-gray-200"
+        } ${className}`}
+        {...props}
+      >
+        {/* Shine (lo importante) */}
+        {primary && (
+          <span className="absolute inset-0 overflow-hidden rounded-full">
+            <span className="absolute top-0 left-[-75%] w-[50%] h-full bg-white/30 blur-md skew-x-[-20deg] animate-shine" />
+          </span>
+        )}
+
+        {/* Brillo interno */}
+        {primary && (
+          <div className="absolute inset-0 rounded-full shadow-[inset_0_1px_2px_rgba(255,255,255,0.3)] pointer-events-none" />
+        )}
+
+        <span className="relative z-20">{children}</span>
+      </motion.button>
+    </div>
+  );
+};
 
 const Section = ({ children, className = "", id = "" }: any) => (
   <section id={id} className={`py-20 px-6 md:px-12 ${className}`}>
@@ -71,16 +102,7 @@ const Hero = ({
 }) => (
   <section className="bg-brand-blue text-white pt-4 pb-8 px-5 md:px-12 overflow-hidden relative">
     <div className="max-w-6xl mx-auto">
-      <nav className="flex justify-between items-center">
-        <img
-          src={logo}
-          alt="Plan35+ Logo"
-          className="h-20 md:h-28 object-contain"
-          referrerPolicy="no-referrer"
-        />
-      </nav>
-
-      <div className="flex flex-col md:flex-row items-center gap-12">
+      <div className="flex flex-col md:flex-row items-center gap-12 mt-5">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -88,13 +110,14 @@ const Hero = ({
           className="md:w-1/2 text-left"
         >
           <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight">
+            Deja de pensar todos los días
             <span className="text-brand-orange">
-              Guía simple para ordenar tu alimentación y retomar el ejercicio
-              después de los 35 años
+              “¿Qué voy a comer?” <br />
             </span>
+            Organiza tu alimentación en minutos cada semana
           </h1>
 
-          <p className="text-sm md:text-lg leading-snug md:leading-relaxed opacity-95 mt-2 max-w-xl mx-auto md:mx-0">
+          <p className="text-sm md:text-lg leading-snug md:leading-relaxed opacity-95 mt-3 max-w-xl mx-auto md:mx-0">
             Una guía clara para volver a cuidarte con un plan simple y fácil de
             seguir.
           </p>
@@ -122,12 +145,15 @@ const Hero = ({
           </div>
 
           <div className="mt-3">
-            <p className="text-brand-orange font-extrabold text-xl md:text-2xl text-center">
+            <p className="font-extrabold text-xl md:text-2xl text-center">
+              Antes $29.99 USD
+            </p>
+            <p className="text-brand-orange font-extrabold text-2xl md:text-3xl text-center">
               PRECIO HOY: $6.99 USD
             </p>
           </div>
 
-          <div className="mt-4 flex justify-center">
+          <div className="flex justify-center">
             <a
               href={HOTMART_URL}
               target="_blank"
@@ -138,11 +164,13 @@ const Hero = ({
                 primary
                 className="text-sm md:text-xl uppercase tracking-wide px-10 md:px-16 py-2 md:py-4"
               >
-                OBTENER EL PLAN35+
+                EMPEZAR HOY CON EL PLAN35+
               </Button>
             </a>
           </div>
-
+          <p className="text-brand-orange text-lg md:text-xl font-medium text-center">
+            Empieza hoy mismo sin volver a improvisar qué comer
+          </p>
           <p className="text-xs md:text-base opacity-90 mt-2 text-center">
             Pago único • Acceso inmediato
             <br />
@@ -356,7 +384,7 @@ const InsidePreview = ({
           primary
           className="text-sm md:text-xl uppercase tracking-wide px-10 md:px-16 py-2 md:py-4"
         >
-          OBTENER EL PLAN35+
+          QUIERO ORGANIZAR MI ALIMENTACIÓN
         </Button>
       </a>
     </div>
@@ -709,19 +737,24 @@ const Pricing = ({
         viewport={{ once: true }}
         className="bg-brand-beige p-14 md:p-10 rounded-[3rem] border-4 border-green-600 shadow-2xl"
       >
-        <h2 className="text-3xl md:text-6xl font-extrabold text-brand-blue mb-4">
-          Acceso completo hoy por $6.99 USD
+        <p className="text-2xl md:text-4xl text-gray-400 font-extrabold line-through mb-2 opacity-70">
+          Antes $29.99 USD
+        </p>
+        <h2 className="text-2xl md:text-5xl font-extrabold text-brand-blue mb-4">
+          Organiza tu alimentación por solo $6.99
         </h2>
 
         <p className="text-xl md:text-3xl text-gray-700 mb-5">
           Pago único • Acceso inmediato • Sin suscripción
         </p>
-
+        <p className="text-2xl md:text-4xl text-gray-700 font-extrabold mb-6">
+          Deja de improvisar qué comer cada día
+        </p>
         <div className="mb-5 flex justify-center">
           <img
             src={portada}
             alt="Mockup Plan35+"
-            className="w-70 md:w-auto max-w-lg md:max-w-xl drop-shadow-2xl mb-5"
+            className="w-70 md:w-auto max-w-lg md:max-w-xl drop-shadow-2xl"
             referrerPolicy="no-referrer"
           />
         </div>
@@ -734,13 +767,13 @@ const Pricing = ({
         >
           <Button
             primary
-            className="text-sm md:text-xl uppercase tracking-wide px-10 md:px-16 py-2 md:py-4"
+            className="text-lg md:text-xl uppercase tracking-wide px-10 md:px-16 py-2 md:py-4"
           >
-            OBTENER EL PLAN35+
+            QUIERO EMPEZAR AHORA POR $6.99
           </Button>
         </a>
 
-        <div className="mt-4 flex items-center justify-center gap-3 text-lg md:text-xl text-brand-blue font-medium">
+        <div className="flex items-center justify-center gap-3 text-lg md:text-xl text-brand-blue font-medium">
           {" "}
           <ShieldCheck className="w-8 h-8 md:w-10 md:h-10 text-green-600 shrink-0" />
           Garantía de 7 días • Compra segura

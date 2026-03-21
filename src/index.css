@@ -41,3 +41,16 @@
 .text-brand-text {
   color: var(--color-brand-text);
 }
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
+.animate-shine {
+  animation: shine 2s infinite;
+}
