@@ -735,28 +735,64 @@ const Pricing = ({
         initial={{ scale: 0.95, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
         viewport={{ once: true }}
-        className="bg-brand-beige p-14 md:p-10 rounded-[3rem] border-4 border-green-600 shadow-2xl"
+        className="bg-brand-beige p-8 md:p-10 rounded-[3rem] border-4 border-green-600 shadow-2xl"
       >
-        <p className="text-2xl md:text-4xl text-gray-400 font-extrabold line-through mb-2 opacity-70">
+        <p className="text-xl md:text-2xl text-gray-400 font-extrabold line-through mb-2 opacity-60">
           Antes $29.99 USD
         </p>
-        <h2 className="text-2xl md:text-5xl font-extrabold text-brand-blue mb-4">
+
+        <p className="text-sm md:text-base font-semibold tracking-wide text-brand-orange mb-3">
+          ⚠ Este precio puede cambiar en cualquier momento
+        </p>
+
+        <h2 className="text-3xl md:text-5xl font-extrabold text-brand-blue mb-6 leading-tight">
           Organiza tu alimentación por solo $6.99
         </h2>
 
-        <p className="text-xl md:text-3xl text-gray-700 mb-5">
+        <p className="text-lg md:text-2xl text-gray-700 mb-3">
           Pago único • Acceso inmediato • Sin suscripción
         </p>
-        <p className="text-2xl md:text-4xl text-gray-700 font-extrabold mb-6">
+
+        <p className="text-base md:text-xl text-brand-blue font-semibold mb-5">
+          Todo el sistema completo que normalmente costaría $59.96
+        </p>
+
+        <p className="text-xl md:text-2xl text-gray-700 font-extrabold mb-6 leading-snug">
           Deja de improvisar qué comer cada día
         </p>
-        <div className="mb-5 flex justify-center">
+
+        <div className="mb-6 flex justify-center">
           <img
             src={portada}
             alt="Mockup Plan35+"
             className="w-70 md:w-auto max-w-lg md:max-w-xl drop-shadow-2xl"
             referrerPolicy="no-referrer"
           />
+        </div>
+
+        <div className="max-w-xl mx-auto mb-8 bg-white/60 rounded-xl p-4 md:p-5 shadow-sm">
+          <div className="space-y-3 text-left">
+            <div className="flex items-start gap-3 text-brand-blue">
+              <span className="text-green-600 font-extrabold mt-0.5">✔</span>
+              <p className="text-base md:text-xl font-medium">
+                Muchas personas ya comenzaron este plan
+              </p>
+            </div>
+
+            <div className="flex items-start gap-3 text-brand-blue">
+              <span className="text-green-600 font-extrabold mt-0.5">✔</span>
+              <p className="text-base md:text-xl font-medium">
+                No necesitas tiempo extra ni experiencia
+              </p>
+            </div>
+
+            <div className="flex items-start gap-3 text-brand-blue">
+              <span className="text-green-600 font-extrabold mt-0.5">✔</span>
+              <p className="text-base md:text-xl font-medium">
+                Puedes empezar hoy mismo, paso a paso
+              </p>
+            </div>
+          </div>
         </div>
 
         <a
@@ -767,16 +803,24 @@ const Pricing = ({
         >
           <Button
             primary
-            className="text-lg md:text-xl uppercase tracking-wide px-10 md:px-16 py-2 md:py-4"
+            className="text-lg md:text-xl uppercase tracking-wide px-10 md:px-16 py-3 md:py-4 mt-2"
           >
-            QUIERO EMPEZAR AHORA POR $6.99
+            QUIERO MI PLAN 35+ HOY POR $6.99
           </Button>
         </a>
 
-        <div className="flex items-center justify-center gap-3 text-lg md:text-xl text-brand-blue font-medium">
-          {" "}
-          <ShieldCheck className="w-8 h-8 md:w-10 md:h-10 text-green-600 shrink-0" />
-          Garantía de 7 días • Compra segura
+        <p className="mt-4 text-sm md:text-base text-gray-600 font-medium">
+          Serás redirigido a Hotmart para completar tu compra de forma segura en
+          menos de 1 minuto.
+        </p>
+
+        <div className="mt-4 flex items-center justify-center gap-3 text-base md:text-xl text-brand-blue font-medium flex-wrap">
+          <ShieldCheck className="w-7 h-7 md:w-9 md:h-9 text-green-600 shrink-0" />
+          <span>Garantía de 7 días</span>
+          <span className="hidden md:inline">•</span>
+          <span>Compra segura</span>
+          <span className="hidden md:inline">•</span>
+          <span>Acceso inmediato</span>
         </div>
       </motion.div>
     </div>
